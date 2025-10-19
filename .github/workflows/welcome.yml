@@ -23,19 +23,19 @@ jobs:
               issue_number: context.issue.number,
               body: `🎉 欢迎您提交第一个 Issue！
 
-感谢您对 Git 教程项目的关注和反馈。我们会尽快查看您的问题。
+          感谢您对 Git 教程项目的关注和反馈。我们会尽快查看您的问题。
 
-Welcome to submit your first issue! Thank you for your attention and feedback on the Git tutorial project. We will review your issue as soon as possible.
+          Welcome to submit your first issue! Thank you for your attention and feedback on the Git tutorial project. We will review your issue as soon as possible.
 
-📚 如果您觉得这个教程有帮助，欢迎：
-- ⭐ 给项目加星
-- 🍴 Fork 项目
-- 📢 分享给更多人
+          📚 如果您觉得这个教程有帮助，欢迎：
+          - ⭐ 给项目加星
+          - 🍴 Fork 项目
+          - 📢 分享给更多人
 
-If you find this tutorial helpful, welcome to:
-- ⭐ Star the project
-- 🍴 Fork the project  
-- 📢 Share with more people`
+          If you find this tutorial helpful, welcome to:
+          - ⭐ Star the project
+          - 🍴 Fork the project  
+          - 📢 Share with more people`
             });
           }
     
@@ -52,14 +52,14 @@ If you find this tutorial helpful, welcome to:
               issue_number: context.issue.number,
               body: `🎉 感谢您的第一个 Pull Request！
 
-您的贡献对改进 Git 教程非常宝贵。请确保：
-- ✅ 遵循项目的文档风格
-- ✅ 内容准确且易于理解
-- ✅ 如果添加新内容，请更新相关的目录结构
+          您的贡献对改进 Git 教程非常宝贵。请确保：
+          - ✅ 遵循项目的文档风格
+          - ✅ 内容准确且易于理解
+          - ✅ 如果添加新内容，请更新相关的目录结构
 
-Thank you for your first Pull Request! Your contribution is very valuable for improving the Git tutorial. Please make sure:
-- ✅ Follow the project's documentation style
-- ✅ Content is accurate and easy to understand
-- ✅ If adding new content, please update the relevant directory structure`
+          Thank you for your first Pull Request! Your contribution is very valuable for improving the Git tutorial. Please make sure:
+          - ✅ Follow the project's documentation style
+          - ✅ Content is accurate and easy to understand
+          - ✅ If adding new content, please update the relevant directory structure`
             });
           }
