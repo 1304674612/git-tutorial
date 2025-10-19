@@ -14,6 +14,7 @@
 ## � 项目亮点
 
 ### ✨ 特色功能
+
 - 📚 **完整的学习路径** - 从零基础到高级应用
 - �🎯 **实践导向** - 大量实际操作练习
 - 🤖 **自动化管理** - GitHub Actions 自动化工作流
@@ -22,18 +23,21 @@
 - 🌍 **中文优化** - 专为中文用户优化的内容
 
 ### 🎓 适合人群
+
 - 🆕 **Git 初学者** - 零基础入门
 - 👨‍💻 **开发者** - 提升版本控制技能
 - 👥 **团队** - 学习协作开发
 - 🏫 **教育者** - 教学参考资料
 
 ### 📊 项目统计
+
 - 📄 **文档数量**: 8+ 个教程文档
 - 🏋️ **练习项目**: 5+ 个实践练习
 - 💻 **示例代码**: 多个完整示例
 - 🤖 **自动化**: 6+ 个 GitHub Actions 工作流
 
 通过这个教程，您将学会：
+
 - Git 的基本概念和工作原理
 - 基础命令操作（add, commit, push, pull 等）
 - 分支管理和合并策略
@@ -43,6 +47,7 @@
 ## 📚 教程结构
 
 ### 📖 文档 (docs/)
+
 - **[Git 基础](docs/01-git-basics.md)** - Git 概念、安装和配置
 - **[基本操作](docs/02-basic-operations.md)** - 添加、提交、查看历史
 - **[分支管理](docs/03-branching.md)** - 创建、切换、合并分支
@@ -51,16 +56,19 @@
 - **[高级技巧](docs/06-advanced.md)** - 变基、标签、钩子等
 
 ### 💻 示例 (examples/)
+
 - **[简单项目](examples/simple-project/)** - 基础 Git 操作示例
 - **[多分支项目](examples/multi-branch/)** - 分支管理示例
 - **[协作项目](examples/collaboration/)** - 团队协作示例
 
 ### 🏋️ 练习 (exercises/)
+
 - **[基础练习](exercises/basic/)** - Git 基本命令练习
 - **[分支练习](exercises/branching/)** - 分支操作练习
 - **[协作练习](exercises/collaboration/)** - 团队协作练习
 
 ### 📋 资源 (resources/)
+
 - **[Git 速查表](resources/cheat-sheet.md)** - 常用命令快速参考
 - **[最佳实践](resources/best-practices.md)** - Git 使用规范
 - **[常见问题](resources/faq.md)** - 常见问题解答
@@ -75,11 +83,13 @@
    ```
 
 2. **开始学习**
+
    - 从 [Git 基础](docs/01-git-basics.md) 开始
    - 按照文档顺序逐步学习
    - 完成相应的练习巩固知识
 
 3. **实践练习**
+
    - 在 exercises/ 目录下完成练习
    - 查看 examples/ 目录下的示例代码
    - 参考 resources/ 目录下的资源
@@ -133,3 +143,4 @@
 **开始您的 Git 学习之旅吧！** 🚀
 
 如果您有任何问题或建议，请不要犹豫，通过 Issues 联系我们。
+

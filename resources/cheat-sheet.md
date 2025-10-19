@@ -33,6 +33,7 @@ git status -s  # 简洁格式
 ## 文件操作
 
 ### 添加文件
+
 ```bash
 git add <file>          # 添加指定文件
 git add .               # 添加所有文件
@@ -42,6 +43,7 @@ git add -u              # 只添加已跟踪的文件
 ```
 
 ### 提交更改
+
 ```bash
 git commit -m "提交信息"    # 提交暂存的文件
 git commit -am "提交信息"   # 添加并提交已跟踪的文件
@@ -49,6 +51,7 @@ git commit --amend         # 修改最后一次提交
 ```
 
 ### 查看差异
+
 ```bash
 git diff                   # 工作区与暂存区的差异
 git diff --cached          # 暂存区与最后提交的差异
@@ -76,6 +79,7 @@ git blame <file>           # 查看文件每行的修改者
 ## 撤销操作
 
 ### 撤销工作区修改
+
 ```bash
 git checkout -- <file>    # 撤销文件修改
 git checkout -- .         # 撤销所有修改
@@ -83,6 +87,7 @@ git restore <file>         # 新版本命令
 ```
 
 ### 撤销暂存
+
 ```bash
 git reset HEAD <file>      # 撤销文件暂存
 git reset HEAD             # 撤销所有暂存
@@ -90,6 +95,7 @@ git restore --staged <file>  # 新版本命令
 ```
 
 ### 撤销提交
+
 ```bash
 git reset --soft HEAD~1    # 撤销提交，保留暂存和工作区
 git reset HEAD~1           # 撤销提交和暂存，保留工作区

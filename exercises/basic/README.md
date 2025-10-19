@@ -42,6 +42,7 @@ git log
 ```
 
 ### 验证
+
 - 使用 `git status` 应该显示 "working tree clean"
 - 使用 `git log` 应该显示一次提交记录
 
@@ -91,6 +92,7 @@ git log --oneline
 ```
 
 ### 验证
+
 - 应该有 3 次提交记录
 - 工作目录应该是干净的
 
@@ -146,6 +148,7 @@ git commit --amend -m "Add features section to README"
 ```
 
 ### 验证
+
 - 最后一次提交的信息应该是 "Add features section to README"
 - 工作目录应该是干净的
 
@@ -199,6 +202,7 @@ git status
 ```
 
 ### 验证
+
 - `git status` 不应该显示 .log、.tmp 文件和 __pycache__ 目录
 - .gitignore 文件应该被跟踪
 
@@ -242,6 +246,7 @@ git log --grep="README"
 ```
 
 ### 验证
+
 - 能够看到所有提交的历史
 - 能够查看特定提交的详细信息
 
@@ -269,3 +274,4 @@ git log --grep="README"
 - [ ] 理解 Git 的基本工作流程
 
 完成这些练习后，您就具备了 Git 的基础操作能力，可以继续学习分支管理等高级功能。
+

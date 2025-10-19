@@ -37,6 +37,7 @@ git commit --amend -m "新的提交信息"
 ## 查看信息
 
 ### 查看状态
+
 ```bash
 # 查看工作区状态
 git status
@@ -46,6 +47,7 @@ git status -s
 ```
 
 ### 查看历史
+
 ```bash
 # 查看提交历史
 git log
@@ -64,6 +66,7 @@ git log filename.txt
 ```
 
 ### 查看差异
+
 ```bash
 # 查看工作区与暂存区的差异
 git diff
@@ -81,6 +84,7 @@ git diff filename.txt
 ## 撤销操作
 
 ### 撤销暂存
+
 ```bash
 # 撤销指定文件的暂存
 git reset HEAD filename.txt
@@ -90,6 +94,7 @@ git reset HEAD
 ```
 
 ### 撤销修改
+
 ```bash
 # 撤销工作区的修改（危险操作）
 git checkout -- filename.txt
@@ -99,6 +104,7 @@ git checkout -- .
 ```
 
 ### 撤销提交
+
 ```bash
 # 撤销最后一次提交，保留修改
 git reset --soft HEAD~1
@@ -113,6 +119,7 @@ git reset --hard HEAD~1
 ## 文件操作
 
 ### 删除文件
+
 ```bash
 # 删除文件并暂存删除操作
 git rm filename.txt
@@ -122,6 +129,7 @@ git rm --cached filename.txt
 ```
 
 ### 移动/重命名文件
+
 ```bash
 # 重命名文件
 git mv oldname.txt newname.txt
@@ -157,6 +165,7 @@ temp/
 ## 实用技巧
 
 ### 查看文件内容
+
 ```bash
 # 查看指定提交中的文件内容
 git show commit_hash:filename.txt
@@ -166,6 +175,7 @@ git show HEAD~2:README.md
 ```
 
 ### 文件追踪
+
 ```bash
 # 查看文件的修改历史
 git log -p filename.txt
@@ -175,6 +185,7 @@ git blame filename.txt
 ```
 
 ### 搜索
+
 ```bash
 # 在提交历史中搜索
 git log --grep="bug fix"

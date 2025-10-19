@@ -3,6 +3,7 @@
 ## 仓库信息设置
 
 ### 基本信息
+
 - **仓库名**: `git-tutorial`
 - **所有者**: `Mickl`
 - **可见性**: Public (公开)
@@ -16,6 +17,7 @@ Features complete learning path, practical exercises, example projects, and chea
 ```
 
 ### 推荐的 Topics 标签
+
 - git
 - tutorial
 - chinese
@@ -27,6 +29,7 @@ Features complete learning path, practical exercises, example projects, and chea
 - 入门指南
 
 ### 仓库特色
+
 - ✅ 完整的中文 Git 教程
 - ✅ 实践练习和示例项目
 - ✅ Git 命令速查表
@@ -49,3 +52,4 @@ Features complete learning path, practical exercises, example projects, and chea
 ```bash
 git push --set-upstream origin main
 ```
+

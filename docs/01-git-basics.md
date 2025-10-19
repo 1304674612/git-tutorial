@@ -7,7 +7,9 @@ Git 是一个分布式版本控制系统，用于跟踪文件的变化并协调�
 ## 核心概念
 
 ### 仓库 (Repository)
+
 仓库是包含项目文件和完整历史记录的目录。Git 仓库包含：
+
 - 工作目录：实际的项目文件
 - 暂存区：准备提交的文件
 - Git 目录：存储所有版本信息
@@ -15,20 +17,24 @@ Git 是一个分布式版本控制系统，用于跟踪文件的变化并协调�
 ### 三个工作区域
 
 1. **工作目录 (Working Directory)**
+
    - 项目的一个版本的提取
    - 从 Git 目录的压缩数据库中提取出来的文件
 
 2. **暂存区 (Staging Area)**
+
    - 一个文件，保存了下次将提交的文件列表信息
    - 也被称为"索引"
 
 3. **Git 目录 (Git Directory)**
+
    - Git 的仓库目录
    - 存储项目的元数据和对象数据库
 
 ## 安装 Git
 
 ### macOS
+
 ```bash
 # 使用 Homebrew
 brew install git
@@ -38,12 +44,14 @@ xcode-select --install
 ```
 
 ### Linux (Ubuntu/Debian)
+
 ```bash
 sudo apt update
 sudo apt install git
 ```
 
 ### Windows
+
 下载并安装 [Git for Windows](https://git-scm.com/download/win)
 
 ## 配置 Git
@@ -64,6 +72,7 @@ git config --list
 ## 创建第一个仓库
 
 ### 初始化新仓库
+
 ```bash
 # 在当前目录初始化
 git init
@@ -74,6 +83,7 @@ cd my-project
 ```
 
 ### 克隆现有仓库
+
 ```bash
 git clone https://github.com/user/repo.git
 ```
@@ -123,5 +133,6 @@ git diff
 ## 下一步
 
 现在您已经了解了 Git 的基础概念，可以继续学习：
+
 - [基本操作](02-basic-operations.md) - 详细学习 add、commit、log 等命令
 - [分支管理](03-branching.md) - 学习如何使用分支
