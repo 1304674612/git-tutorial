@@ -1,8 +1,37 @@
 # Git 教程 - 从入门到精通
 
+[![GitHub stars](https://img.shields.io/github/stars/1304674612/git-tutorial?style=flat-square&logo=github)](https://github.com/1304674612/git-tutorial/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/1304674612/git-tutorial?style=flat-square&logo=github)](https://github.com/1304674612/git-tutorial/network)
+[![GitHub issues](https://img.shields.io/github/issues/1304674612/git-tutorial?style=flat-square&logo=github)](https://github.com/1304674612/git-tutorial/issues)
+[![GitHub license](https://img.shields.io/github/license/1304674612/git-tutorial?style=flat-square)](https://github.com/1304674612/git-tutorial/blob/main/LICENSE)
+[![Documentation Status](https://img.shields.io/badge/documentation-complete-brightgreen?style=flat-square&logo=gitbook)](https://github.com/1304674612/git-tutorial)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/1304674612/git-tutorial/quality-check.yml?style=flat-square&logo=github-actions&label=quality%20check)](https://github.com/1304674612/git-tutorial/actions)
+[![Language](https://img.shields.io/badge/language-中文-blue?style=flat-square)](README.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/1304674612/git-tutorial/pulls)
+
 欢迎来到 Git 版本控制系统的综合学习教程！这个项目旨在帮助您从零开始学习 Git，逐步掌握从基础操作到高级技巧的所有内容。
 
-## 🎯 学习目标
+## � 项目亮点
+
+### ✨ 特色功能
+- 📚 **完整的学习路径** - 从零基础到高级应用
+- �🎯 **实践导向** - 大量实际操作练习
+- 🤖 **自动化管理** - GitHub Actions 自动化工作流
+- 🌐 **在线文档** - GitHub Pages 托管的精美文档网站
+- 🔄 **持续更新** - 定期更新内容和最佳实践
+- 🌍 **中文优化** - 专为中文用户优化的内容
+
+### 🎓 适合人群
+- 🆕 **Git 初学者** - 零基础入门
+- 👨‍💻 **开发者** - 提升版本控制技能
+- 👥 **团队** - 学习协作开发
+- 🏫 **教育者** - 教学参考资料
+
+### 📊 项目统计
+- 📄 **文档数量**: 8+ 个教程文档
+- 🏋️ **练习项目**: 5+ 个实践练习
+- 💻 **示例代码**: 多个完整示例
+- 🤖 **自动化**: 6+ 个 GitHub Actions 工作流
 
 通过这个教程，您将学会：
 - Git 的基本概念和工作原理

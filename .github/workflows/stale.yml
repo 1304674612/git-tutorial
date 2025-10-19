@@ -1,0 +1,50 @@
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+  - cron: '0 0 * * *'  # 每天运行一次
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/stale@v9
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        
+        # Issues 配置
+        stale-issue-message: |
+          👋 这个 Issue 已经 30 天没有活动了。如果它仍然相关，请添加评论以保持活跃状态。
+          
+          This issue has been inactive for 30 days. If it's still relevant, please add a comment to keep it active.
+        close-issue-message: |
+          🔒 由于长期无活动，这个 Issue 已被自动关闭。如果需要可以重新打开。
+          
+          This issue was automatically closed due to inactivity. Feel free to reopen if needed.
+        days-before-issue-stale: 30
+        days-before-issue-close: 7
+        stale-issue-label: 'stale'
+        
+        # Pull Requests 配置
+        stale-pr-message: |
+          👋 这个 Pull Request 已经 21 天没有活动了。请更新或回复以保持活跃状态。
+          
+          This PR has been inactive for 21 days. Please update or respond to keep it active.
+        close-pr-message: |
+          🔒 由于长期无活动，这个 Pull Request 已被自动关闭。如果需要可以重新打开。
+          
+          This PR was automatically closed due to inactivity. Feel free to reopen if needed.
+        days-before-pr-stale: 21
+        days-before-pr-close: 7
+        stale-pr-label: 'stale'
+        
+        # 排除的标签
+        exempt-issue-labels: 'pinned,security,enhancement'
+        exempt-pr-labels: 'pinned,security'
+        
+        # 其他配置
+        operations-per-run: 30
+        ascending: true

@@ -1,0 +1,87 @@
+name: Social Media Share
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Custom message to share'
+        required: false
+        default: '🎉 Git 教程项目更新了！快来学习最新的 Git 技巧吧！'
+
+jobs:
+  share:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Generate share content
+      id: content
+      run: |
+        if [ "${{ github.event_name }}" == "release" ]; then
+          MESSAGE="🎉 Git 教程 ${{ github.event.release.tag_name }} 发布了！
+          
+          ✨ 新增内容：
+          ${{ github.event.release.body }}
+          
+          🔗 GitHub: https://github.com/${{ github.repository }}
+          📚 在线文档: https://${{ github.repository_owner }}.github.io/git-tutorial/
+          
+          #Git #教程 #开源 #学习 #GitHub"
+        else
+          MESSAGE="${{ github.event.inputs.message }}
+          
+          🔗 GitHub: https://github.com/${{ github.repository }}
+          📚 在线文档: https://${{ github.repository_owner }}.github.io/git-tutorial/
+          
+          #Git #教程 #开源 #学习 #GitHub"
+        fi
+        echo "message<<EOF" >> $GITHUB_OUTPUT
+        echo "$MESSAGE" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+      
+    - name: Create shareable content file
+      run: |
+        cat > share-content.md << 'EOF'
+        # 分享内容 Share Content
+        
+        ## 社交媒体文案
+        
+        ${{ steps.content.outputs.message }}
+        
+        ## 推荐平台
+        
+        ### 开发者社区
+        - [Dev.to](https://dev.to/)
+        - [Hashnode](https://hashnode.com/)
+        - [掘金](https://juejin.cn/)
+        - [CSDN](https://blog.csdn.net/)
+        - [博客园](https://www.cnblogs.com/)
+        
+        ### 社交媒体
+        - Twitter/X
+        - LinkedIn
+        - 微博
+        - 知乎
+        
+        ### 技术论坛
+        - Stack Overflow
+        - Reddit (r/git, r/programming)
+        - V2EX
+        - 思否 SegmentFault
+        
+        ## 分享链接
+        
+        - **GitHub**: https://github.com/${{ github.repository }}
+        - **在线文档**: https://${{ github.repository_owner }}.github.io/git-tutorial/
+        - **问题反馈**: https://github.com/${{ github.repository }}/issues
+        - **贡献指南**: https://github.com/${{ github.repository }}/blob/main/CONTRIBUTING.md
+        EOF
+        
+    - name: Upload share content
+      uses: actions/upload-artifact@v4
+      with:
+        name: share-content
+        path: share-content.md

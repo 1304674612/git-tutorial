@@ -1,0 +1,175 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - 'README.md'
+      - 'resources/**'
+      - 'examples/**'
+      - '.github/workflows/pages.yml'
+
+  # 允许手动触发
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限以允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 只允许一个并发部署，跳过正在运行和最新排队的运行之间的运行
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 构建作业
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: |
+          npm install -g @vuepress/cli vuepress
+          
+      - name: Setup VuePress config
+        run: |
+          mkdir -p .vuepress
+          cat > .vuepress/config.js << 'EOF'
+          module.exports = {
+            title: 'Git 教程 - 从入门到精通',
+            description: '综合性的 Git 教程，包含完整的学习路径、实践练习和示例项目',
+            base: '/git-tutorial/',
+            head: [
+              ['link', { rel: 'icon', href: '/favicon.ico' }]
+            ],
+            themeConfig: {
+              nav: [
+                { text: '首页', link: '/' },
+                { text: '教程', link: '/docs/' },
+                { text: '练习', link: '/exercises/' },
+                { text: '示例', link: '/examples/' },
+                { text: '资源', link: '/resources/' },
+                { text: 'GitHub', link: 'https://github.com/1304674612/git-tutorial' }
+              ],
+              sidebar: {
+                '/docs/': [
+                  {
+                    title: 'Git 教程',
+                    collapsable: false,
+                    children: [
+                      '',
+                      '01-git-basics',
+                      '02-basic-operations',
+                      'github-automation-tools'
+                    ]
+                  }
+                ],
+                '/exercises/': [
+                  {
+                    title: '实践练习',
+                    collapsable: false,
+                    children: [
+                      'basic/'
+                    ]
+                  }
+                ],
+                '/examples/': [
+                  {
+                    title: '示例项目',
+                    collapsable: false,
+                    children: [
+                      'simple-project/'
+                    ]
+                  }
+                ],
+                '/resources/': [
+                  {
+                    title: '学习资源',
+                    collapsable: false,
+                    children: [
+                      'cheat-sheet'
+                    ]
+                  }
+                ]
+              },
+              lastUpdated: '最后更新',
+              repo: '1304674612/git-tutorial',
+              editLinks: true,
+              editLinkText: '在 GitHub 上编辑此页',
+              docsDir: '',
+              docsBranch: 'main'
+            },
+            plugins: [
+              '@vuepress/back-to-top',
+              '@vuepress/medium-zoom',
+              [
+                '@vuepress/google-analytics',
+                {
+                  ga: 'G-XXXXXXXXXX' // 替换为实际的 Google Analytics ID
+                }
+              ]
+            ]
+          }
+          EOF
+          
+      - name: Create docs index
+        run: |
+          cat > docs/README.md << 'EOF'
+          # Git 教程文档
+          
+          欢迎来到 Git 教程文档！这里包含了完整的 Git 学习资料。
+          
+          ## 📚 教程内容
+          
+          - [Git 基础](01-git-basics.md) - 了解 Git 的基本概念
+          - [基本操作](02-basic-operations.md) - 掌握常用的 Git 命令
+          - [GitHub 自动化工具](github-automation-tools.md) - 提升开发效率的工具推荐
+          
+          ## 🚀 开始学习
+          
+          建议按照以下顺序进行学习：
+          
+          1. 先阅读 [Git 基础](01-git-basics.md) 了解基本概念
+          2. 通过 [基本操作](02-basic-operations.md) 掌握常用命令
+          3. 完成 [基础练习](/exercises/basic/) 巩固知识
+          4. 查看 [示例项目](/examples/simple-project/) 了解实际应用
+          
+          ## 📋 学习资源
+          
+          - [Git 速查表](/resources/cheat-sheet.md) - 快速查找常用命令
+          - [GitHub 自动化工具](github-automation-tools.md) - 提升工作效率
+          EOF
+          
+      - name: Build VuePress site
+        run: |
+          vuepress build . --dest dist
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  # 部署作业
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
