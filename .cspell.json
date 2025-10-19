@@ -1,0 +1,27 @@
+{
+  "version": "0.2",
+  "language": "zh-CN,en",
+  "words": [
+    "GitHub",
+    "GitKraken", 
+    "macOS",
+    "Ubuntu",
+    "Debian",
+    "Homebrew",
+    "Xcode",
+    "README",
+    "gitignore",
+    "Linus",
+    "Torvalds",
+    "repo",
+    "repos",
+    "CLI",
+    "API",
+    "IDE",
+    "VSCode"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    ".git/**"
+  ]
+}
