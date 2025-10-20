@@ -39,7 +39,7 @@ jobs:
         markdownlint --config .markdownlint.json docs/ resources/ exercises/ examples/ *.md || true
         
     - name: Check spelling
-      uses: streetsidesoftware/cspell-action@v5
+      uses: streetsidesoftware/cspell-action@v7
       with:
         files: '**/*.md'
         config: .cspell.json
